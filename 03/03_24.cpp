@@ -20,12 +20,32 @@ named PETNAME. They both lived happily ever after!
 
 #include <iostream>
 #include <iomanip>
+#include <string>
 using namespace std;
 
-
+string name, city, college, profession, animal, pet;
+int age;
 
 void main() {
+	cout << "Name: ";
+	cin >> name;
+	cout << "Age: ";
+	cin >> age;
+	cout << "City: ";
+	cin >> city;
+	cout << "College: ";
+	cin >> college;
+	cout << "Profession: ";
+	cin >> profession;
+	cout << "Favorite animal: ";
+	cin >> animal;
+	cout << "Name of a pet: ";
+	cin >> pet;
 
-
+	cout << "There once was a person named " << name << " who lived in " << city;
+	cout << ". At the age of\n" << age << ", " << name << " went to college at " << college << ". ";
+	cout << name << " graduated and went to work\nas a " << profession << ". Then, " << name;
+	cout << " adopted a(an) " << animal << " named " << pet << ". They\nboth lived happily ever after!\n" << endl;
+	cin.get();
 	return;
 }
