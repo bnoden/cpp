@@ -12,14 +12,64 @@ display the correct solution:
 
 #include <iostream>
 #include <iomanip>
-#include <string>
 using namespace std;
 
+int num1, num2, solution, answer, correct, incorrect;;
 
+void CheckAnswer(int, int);
 
 void main() {
+	
+	int problems = 1;
 
+	correct = 0, incorrect = 0;
 
+	while (problems <= 10) {
+		
+		cout << "Problem " << problems << ": \n" << endl;
+		num1 = rand()%1000;
+		num2 = rand()%1000;
+		solution = num1 + num2;
+		cout << setw(5) << right << num1 << endl;
+		
+		cout << left << "+";
+		cout << setw(4) << right << num2 << endl;
+		if (solution > 999) {
+			cout << " ";
+		}
+		else if (solution < 1000) {
+			cout << "  ";
+		}
+		cin >> answer;
+
+		CheckAnswer(solution, answer);
+		
+		cin.get();
+		problems++;
+		srand(answer);
+	}
+
+	cout << "You got " << correct << " correct and " << incorrect << " incorrect." << endl;
+	if (correct == 10) {
+		cout << "Perfect!" << endl;
+	}
+	else if (correct >= 7) {
+		cout << "Not bad!" << endl;
+	}
+	else if (correct < 7) {
+		cout << "You should study more!" << endl;
+	}
 
 	return;
+}
+
+void CheckAnswer(int sol, int ans) {
+	if (ans == sol) {
+		cout << "Correct!\n" << endl;
+		correct+=1;
+	}
+	else if (ans != sol) {
+		cout << "Incorrect! The correct answer is " << sol << ".\n" << endl;
+		incorrect+=1;
+	}
 }
