@@ -20,12 +20,37 @@ Total Sales Tax:     $  1504.13
 
 #include <iostream>
 #include <iomanip>
+#include <string>
 using namespace std;
 
+const double STATE_TAX = 0.04;
+const double COUNTY_TAX = 0.02;
 
+double sales, totalIncome, revenue;
+double totalTax = STATE_TAX + COUNTY_TAX;
+string month;
+int year;
+
+int w = 20, w2 = 8;
 
 void main() {
-	
+	cout << "Enter the month: ";
+	cin >> month;
+	cout << "Enter the year: ";
+	cin >> year;
+	cout << "Enter total amount collected: ";
+	cin >> totalIncome;
+
+	revenue = totalIncome / (1.0+totalTax);
+
+	cout << setprecision(2) << fixed;
+	cout << month << ' ' << year << endl;
+	cout << "--------------------" << endl;
+	cout << setw(w) << left << "Total Collected:" << right << "$ " << setw(w2) << totalIncome << endl;
+	cout << setw(w) << left << "Sales: " << right << "$ " << setw(w2) << revenue << endl;
+	cout << setw(w) << left << "County Sales Tax:" << right << "$ " << setw(w2) << revenue*COUNTY_TAX << endl;
+	cout << setw(w) << left << "State Sales Tax:" << right << "$ " << setw(w2) << revenue*STATE_TAX << endl;
+	cout << setw(w) << left << "Total Sales Tax:" << right << "$ " << setw(w2) << revenue*totalTax << endl;
 
 	return;
 }
