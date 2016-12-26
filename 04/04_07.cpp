@@ -14,12 +14,25 @@ that many seconds.
 
 #include <iostream>
 #include <iomanip>
+#include <string>
 using namespace std;
 
-
+double minute = 60, hour = 3600, day = 86400;
 
 void main() {
+	int seconds;
+	double intVal = 1;
+	string strVal = " seconds";
 
+	cout << "Enter number of seconds: ";
+	cin >> seconds;
+	
+	if (seconds >= day) { intVal = day; strVal = " days"; }
+	else if (seconds >= hour) { intVal = hour; strVal = " hours"; }
+	else if (seconds >= minute) { intVal = minute; strVal = " minutes"; }
+
+	cout << setprecision(2) << fixed;
+	cout << "There are " << seconds/intVal << strVal << " in " << seconds << " seconds." << endl;
 
 	return;
 }
