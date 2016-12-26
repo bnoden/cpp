@@ -1,6 +1,5 @@
 /*
-24.    
-Word Game
+24. Word Game
 Write a program that plays a word game with the user. The program should ask the 
 user to enter the following: 
 • His or her name 
@@ -47,5 +46,6 @@ void main() {
 	cout << name << " graduated and went to work\nas a " << profession << ". Then, " << name;
 	cout << " adopted a(an) " << animal << " named " << pet << ". They\nboth lived happily ever after!\n" << endl;
 	cin.get();
+	
 	return;
 }
