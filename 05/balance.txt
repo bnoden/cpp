@@ -1,0 +1,6 @@
+
+Balance: $507.86
+Total amount deposited: $1600.00
+Total amount withdrawn: $1500.00
+Total interest earned: $3.01
+
