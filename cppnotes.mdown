@@ -1,0 +1,21 @@
+C++ Notes
+
+Files:
+	ofstream - output file stream
+		ofstream outputFile("file.txt");
+		outputFile << "Write to file just like cout";
+	ifstream - input files stream
+		ifstream inputFile;
+			inputFile.open("file.txt");
+			inputFile.open("C:\\data\\file.txt"); - extra backslash to represent string literal backslash
+			inputFile.close();
+			inputFile >> someString; - reads string from next read position, each string seperated by whitespace (space or newline)
+			int value; inFile >> value; - converts number in file from string to number
+			while (inFile >> value) - read to end of file
+			if (inFile) {something} else {error} - test for file open errors
+				if (infile.fail()) {error} else {something} - alternative to above
+	fstream - file stream
+
+C-strings - in older versions of C++
+	strObject.c_str() - returns string stored in strObject as a null-terminated C-string
+		Example: inFile.open(filename.c_str());
