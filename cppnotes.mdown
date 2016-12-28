@@ -19,3 +19,17 @@ Files:
 C-strings - in older versions of C++
 	strObject.c_str() - returns string stored in strObject as a null-terminated C-string
 		Example: inFile.open(filename.c_str());
+
+Reference variables as parameters
+	example: timesTwo(int &num) { num*=2; }
+		if int num = 4, then method(num) == 8
+
+Two or more functions may have the same name, as long as their parameter lists are different.
+	example: int square(int); double square(double);
+	example: int square(int); int square(int, int); int square(int, double);
+
+
+
+
+
+
