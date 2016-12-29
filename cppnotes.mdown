@@ -81,4 +81,41 @@ STL (Standard Template Library)
 			If you add a value to a vector that's already full, it will automatically increase size
 			Vectors can report the number of elements they contain
 
+Searching and Sorting Arrays
+	Linear Search
+		Also called Sequential Search
+		Searches the array from beginning to end
+		Simple, but inefficient
+	Binary Search
+		Array must be sorted first
+		Same as GuessTheNumber game
+	Bubble Sort
+		inefficient for large arrays
+		void bubbleSort(int arr[],int size){ 
+		   bool swap; int temp; 
+		   do{ 
+		      swap = false; 
+		      for (int i = 0; i < (size − 1); i++) { 
+		         if (arr[i] > arr[i + 1]) { 
+		             temp = arr[i]; arr[i] = arr[i + 1]; arr[i + 1] = temp; swap = true;
+		         } 
+		      } 
+		   } while (swap); 
+		}
+
+	Selection Sort
+		more efficient for larger arrays
+		void selectionSort(int arr[],int size) { 
+	       int start, minIndex, minVal; 
+	       for (start = 0; start < (size − 1); start++) { 
+	           min = start; minVal = arr[start]; 
+	           for(int i = start + 1; i < size; i++) { 
+	               if (arr[i] < minVal) { 
+	                   minVal = arr[i]; 
+	                   minIndex = i; 
+	               } 
+	           } 
+	           arr[minIndex] = arr[start]; arr[start] = minVal; 
+	       } 
+	    } 
 
