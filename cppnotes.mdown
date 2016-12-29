@@ -28,8 +28,57 @@ Two or more functions may have the same name, as long as their parameter lists a
 	example: int square(int); double square(double);
 	example: int square(int); int square(int, int); int square(int, double);
 
+Range-based for loop:
+	example - int numbers[] = {3,6,9};
+				for (int val : numbers) { cout << val << endl; }
 
+STL (Standard Template Library)
+	data types defined in STL commonly called containers, because they store and organize data
+		2 types
+			sequence containers
+				organizes data in a sequential fashion, similar to an array
+			associative containers
+				organizes data with keys, which allow rapid, random access to elements stored in container
 
+	STL vector
+		#include <vector> (must have using namespace std;)
+			vector<int> numbers;
+			vector<int> numbers(10); to define starting size
+			vector<int> numbers(10, 2); to define starting size of 10, each element initialized to 2
+			vector<int> set2(set1); initializes set2 by copying set 1 to it
+			vector<int> numbers { 10, 20, 30, 40 }; initializes vector with list of values
+				no need for equals sign like array: int numbers[] = { 10, 20, 30, 40 };
+				numbers[i] can be replaced with new value
+			Rang-based for loops is same as array:
+				vector<int> numbers { 3, 6, 9};
+					for (int val : numbers) { cout << val << endl; }
+			push_back
+				numbers.push_back(25); puts 26 in last element, or adds as new element if full
+			pop_back
+				numbers.pop_back(); removes the last element
+			clear
+				numbers.clear(); clears all elements
+			empty
+				if (numbers.empty()) determines if vector is empty
+			size
+				x = numbers.size(); x = size of vector
+			at
+				x = numbers.at(5); x = the value of the 6th element (an array would be numbers[5])
+			reverse
+				numbers.reverse(); reverses the order of elements
+			resize(elements, value)
+				numbers.resize(5, 1); increases size by 5 and initializes the new elements to 1
+			swap(vector2)
+				set1.swap(set2); swaps contents of set1 with set2
 
+		holds a sequence of values, or elements
+		stores its elements in contiguous memory locations
+		you can use array subscript operator [] to read individual elements in the vector
+			cannot use it to access element that does not yet exist
+
+		Advantages over arrays:
+			You don't have to declare the number of elements it will have
+			If you add a value to a vector that's already full, it will automatically increase size
+			Vectors can report the number of elements they contain
 
 

@@ -20,12 +20,17 @@ using namespace std;
 double calculateRetail(double, double);
 
 void main() {
-	double costWholesale, markup;
+	double costWholesale = -0.01, markup = -0.01;
 
-	cout << "Enter wholesale: $";
-	cin >> costWholesale;
-	cout << "Enter markup %: ";
-	cin >> markup;
+	while (costWholesale < 0.0) {
+		cout << "Enter wholesale: $";
+		cin >> costWholesale;
+	}
+	
+	while (markup < 0.0) {
+		cout << "Enter markup %: ";
+		cin >> markup;
+	}
 
 	cout << setprecision(2) << fixed;
 	cout << "\nThe retail cost for this item is $" << calculateRetail(costWholesale, markup) << endl;
