@@ -108,7 +108,7 @@ Searching and Sorting Arrays
 		void selectionSort(int arr[],int size) { 
 	       int start, minIndex, minVal; 
 	       for (start = 0; start < (size − 1); start++) { 
-	           min = start; minVal = arr[start]; 
+	           minIndex = start; minVal = arr[start]; 
 	           for(int i = start + 1; i < size; i++) { 
 	               if (arr[i] < minVal) { 
 	                   minVal = arr[i]; 
@@ -119,3 +119,29 @@ Searching and Sorting Arrays
 	       } 
 	    } 
 
+Pointers
+	Getting the address of a variable
+		char: 1 byte
+		short: 2 bytes
+		int, long, float: 4 bytes
+		double: 8 bytes
+	A variables address is the address of first byte allocated to it
+		example: int num = 25; &num = address of num, in hexadecimal
+	Do not confuse with reference variables
+
+	Pointer Variables, or just pointers
+		designed to hold memory addresses
+		indirectly manipulate data stored in other variables
+
+	Defining pointer variables:
+		int *ptr;	int means it can hold the address of an int variable
+			the above means "ptr is a pointer to an int"
+			could also be written as int* ptr; to make it clear that it's a pointer rather than int
+
+		Always define pointer by initializing with valid memory address
+			nullptr - points to address 0
+				int *ptr = nullptr;
+					with older, non-C++11-compliant compilers, use 0 or NULL
+
+		* is an indirection operator. It dereferences the pointer
+			You are working, not with the pointer variable itself, but with the item it points to
