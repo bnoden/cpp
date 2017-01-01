@@ -41,14 +41,14 @@ void main() {
 	int distance = -1;
 	double travelTime;
 	char direction = ' ';
-	
+
 	while (distance < 0 || distance > MAX_DISTANCE) {
 		cout << "Enter the distance traveled: ";
 		cin >> distance;
 	}
 
 	while (toupper(direction) != 'N' && toupper(direction) != 'S' &&
-			toupper(direction) != 'E' && toupper(direction) != 'W') {
+		toupper(direction) != 'E' && toupper(direction) != 'W') {
 		cout << "Enter the direction: ";
 		cin >> direction;
 	}
@@ -76,8 +76,8 @@ double getTime(double dist, char dir) {
 void timef(double num) {
 	double minute, second;
 	minute = (num - floor(num)) * 60;
-	second = (minute - floor(minute)) * 100;
-	
+	second = (minute - floor(minute)) * 60;
+
 	cout << setfill('0') << setw(2) << int(floor(num)) << ":";
 	cout << setfill('0') << setw(2) << int(floor(minute)) << ":";
 	cout << setfill('0') << setw(2) << int(floor(second));

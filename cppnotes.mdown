@@ -145,3 +145,17 @@ Pointers
 
 		* is an indirection operator. It dereferences the pointer
 			You are working, not with the pointer variable itself, but with the item it points to
+
+		an array name is really a pointer to the first address of the array
+			arr[i] == *(arr + i)
+
+		Cannot multiply or divide pointers
+
+	Only use pointers with delete that were previously used with new
+
+	Smart Pointers
+		arrSelectSort
+		showArrPtr
+		showArray
+
+
