@@ -24,12 +24,15 @@ void main() {
 
 	numbers = allocate(numInput);
 
-	for (int i = 0; i < numInput; i++) { cout << numbers[i] << endl; }
+	for (int i = 0; i < numInput; i++) {
+		cout << "numbers[" << i << "] = " << numbers[i] << endl;
+	}
 
 	delete [] numbers;
 
 	cout << "\nAttempting to delete numbers..." << endl;
 	for (int i = 0; i < numInput; i++) {
+		cout << "numbers[" << i << "] = ";
 		if (numbers[i] < 1) {
 			cout << "NULL" << endl;
 		}
