@@ -95,7 +95,7 @@ Searching and Sorting Arrays
 		   bool swap; int temp; 
 		   do{ 
 		      swap = false; 
-		      for (int i = 0; i < (size − 1); i++) { 
+		      for (int i = 0; i < (size - 1); i++) { 
 		         if (arr[i] > arr[i + 1]) { 
 		             temp = arr[i]; arr[i] = arr[i + 1]; arr[i + 1] = temp; swap = true;
 		         } 
@@ -152,6 +152,41 @@ Pointers
 		Cannot multiply or divide pointers
 
 	Only use pointers with delete that were previously used with new
+
+	Dynamic Memory Allocation
+		if int *iptr = nullptr;
+			then iptr = new int; tells computer to allocate enough memory for new int variable.
+			 then you could say *iptr = 25;
+
+		Dynamically Allocate an Array - pr9-14 or p524
+			iptr = new int[100];
+				for (int i = 0; i < 100; i++) { iptr[i] = 1; }
+			Dynamically allocated memory should be released when a program is done with it
+				to prevent Memory Leaks
+				
+				delete
+					example: delete iptr;
+						for arrays - delete [] iptr;
+
+						example:
+							void grabMemory(){const int SIZE = 100; int *iptr = new int[SIZE];}
+								above function ends without deleting memory, so the memory sits
+									in that function unused.
+					Only use delete on pointers that were previously used with new
+
+		Returning Pointers from Functions = pr9-15 or p526
+			Make sure the pointer reference still exists
+			You should return a pointer from a function only if it is:
+				A pointer to an item that was passed into the function as an argument
+					or A pointer to a dynamically allocated chunk of memory 
+				
+				example: char *findNull(char *str) {
+							char *ptr = str;
+							while (*ptr != '\0') {ptr++;}
+							return ptr;
+						 }
+
+						 
 
 	Smart Pointers
 		arrSelectSort
