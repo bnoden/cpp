@@ -32,6 +32,8 @@ int main() {
 		cout << "SUCCESS: pin1 and pin1 report to be the same.\n";
 	else
 		cout << "ERROR: pin1 and pin1 report to be different.\n";
+
+	
 	return 0;
 }
 
