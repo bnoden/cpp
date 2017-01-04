@@ -12,9 +12,12 @@ Input Validation: Do not accept negative numbers for test scores.
 
 #include <iostream>
 #include <iomanip>
+#include <memory>
 using namespace std;
 
 int *getScores(int);
+void sortAsc(int [], int);
+int scoreAverage(int [], int);
 
 void main() {
 	int numberOfScores = -1;
@@ -26,15 +29,26 @@ void main() {
 	}
 	scores = getScores(numberOfScores);
 
+	sortAsc(scores, numberOfScores);
+
+	cout << "Scores sorted: " << endl;
 	for (int i = 0; i < numberOfScores; i++) {
 		cout << scores[i] << endl;
 	}
 
-
+	cout << "\nThe average of all scores is: " << scoreAverage(scores, numberOfScores) << endl;
 
 	delete [] scores;
 
 	return; 
+}
+
+int scoreAverage(int arr[], int size) {
+	double total = 0;
+	for (int i = 0; i < size; i++) {
+		total+=arr[i];
+	}
+	return total/size;
 }
 
 int *getScores(int num) {
@@ -51,4 +65,22 @@ int *getScores(int num) {
 	}
 
 	return arr;
+}
+
+void sortAsc(int arr[],int size) {
+	int start, minIndex;
+	int minElem;
+
+	for (start = 0; start < size-1; start++) {
+		minIndex = start;
+		minElem = arr[start];
+		for (int i = start+1; i < size; i++) {
+			if ((arr[i]) < minElem) {
+				minElem = arr[i];
+				minIndex = i;
+			}
+		}
+		arr[minIndex] = arr[start];
+		arr[start] = minElem;
+	}
 }
