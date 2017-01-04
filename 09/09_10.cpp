@@ -29,6 +29,7 @@ void main() {
 	}
 
 	delete [] array2;
+	cout << endl;
 
 	return; 
 }

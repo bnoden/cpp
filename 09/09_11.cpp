@@ -29,8 +29,9 @@ void main() {
 	for (int i = 0; i < count+count; i++) {
 		cout << i+1 << ": " << array2[i] << endl;
 	}
-
+	
 	delete [] array2;
+	cout << endl;
 
 	return; 
 }
