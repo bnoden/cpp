@@ -1,46 +1,86 @@
 /*
-10. Reverse Array 
-Write a function that accepts an  
-int
-array and the array’s size as arguments. The func-
-tion should create a copy of the array, except that the element values should be reversed 
-in the copy. The function should return a pointer to the new array. Demonstrate the 
-function in a complete program. 
+2. Test Scores #1 
+Write  a  program  that  dynamically  allocates  an  array  large  enough  to  hold  a  user-
+defined  number  of  test  scores.  Once  all  the  scores  are  entered,  the  array  should  be  
+passed  to  a  function  that  sorts  them  in  ascending  order.  Another  function  should  be
+called that calculates the average score. The program should display the sorted list of 
+scores and averages with appropriate headings. Use pointer notation rather than array 
+notation whenever possible. 
+
+Input Validation: Do not accept negative numbers for test scores.
 */
 
 #include <iostream>
+#include <iomanip>
 #include <memory>
 using namespace std;
 
-int *reverse(int[],int);
+int *getScores(int);
+void sortAsc(int [], int);
+int scoreAverage(int [], int);
 
 void main() {
-	int array1[] = {0,10,101,1010,10101,1010101,10101010};
-	int count = 0;
-	for (int index : array1) {
-		cout << index << endl;
-		count++;
+	int numberOfScores = -1;
+	int *scores;
+
+	while (numberOfScores <= 0) {
+		cout << "Enter number of test scores: ";
+		cin >> numberOfScores;
+	}
+	scores = getScores(numberOfScores);
+
+	sortAsc(scores, numberOfScores);
+
+	cout << "Scores sorted: " << endl;
+	for (int i = 0; i < numberOfScores; i++) {
+		cout << scores[i] << endl;
 	}
 
-	int *array2;
-	array2 = reverse(array1, count);
+	cout << "\nThe average of all scores is: " << scoreAverage(scores, numberOfScores) << endl;
 
-	for (int i = 0; i < count; i++) {
-		cout << array2[i] << endl;
-	}
-
-	delete [] array2;
+	delete [] scores;
 
 	return; 
 }
 
-int *reverse(int arr[],int size) {
-	int *arr2 = nullptr;
-	arr2 = new int[size];
-
+int scoreAverage(int arr[], int size) {
+	double total = 0;
 	for (int i = 0; i < size; i++) {
-		arr2[i] = arr[(size-1)-i];
+		total+=arr[i];
+	}
+	return total/size;
+}
+
+int *getScores(int num) {
+	int *arr = nullptr;
+
+	if (num > 0) {
+		arr = new int[num];
+
+		for (int i = 0; i < num; i++) {
+			cout << "Enter score: ";
+			cin >> arr[i];
+		}
+
 	}
 
-	return arr2;
+	return arr;
+}
+
+void sortAsc(int arr[],int size) {
+	int start, minIndex;
+	int minElem;
+
+	for (start = 0; start < size-1; start++) {
+		minIndex = start;
+		minElem = arr[start];
+		for (int i = start+1; i < size; i++) {
+			if ((arr[i]) < minElem) {
+				minElem = arr[i];
+				minIndex = i;
+			}
+		}
+		arr[minIndex] = arr[start];
+		arr[start] = minElem;
+	}
 }
