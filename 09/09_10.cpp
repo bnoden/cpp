@@ -9,7 +9,6 @@ function in a complete program.
 */
 
 #include <iostream>
-#include <memory>
 using namespace std;
 
 int *reverse(int[],int);

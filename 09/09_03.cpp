@@ -5,8 +5,6 @@ included in the calculation of the average.
 */
 
 #include <iostream>
-#include <iomanip>
-#include <memory>
 using namespace std;
 
 int *getScores(int);

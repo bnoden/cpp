@@ -11,8 +11,6 @@ Input Validation: Do not accept negative numbers for test scores.
 */
 
 #include <iostream>
-#include <iomanip>
-#include <memory>
 using namespace std;
 
 int *getScores(int);
