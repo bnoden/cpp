@@ -12,16 +12,14 @@ using namespace std;
 int charCount(char*);
 
 void main() {
-	const int max = 256;
-	char input[max];
-	
-	cout << "Enter a string: ";
-	cin.getline(input, max);
+	const int MAX = 256;
+	char input[MAX];
 
-	int num = charCount(input);
+	cout << "Enter a string: ";
+	cin.getline(input, MAX);
 
 	cout << endl;
-	cout << "Character count: " << num << endl;
+	cout << "Character count: " << charCount(input) << endl;
 
 	cout << endl;
 	return; 
