@@ -200,4 +200,40 @@ Pointers
 				showArrPtr
 				showArray
 
+Character Testing
+	returns true (nonzero) or false (0):
+		isalpha(char) - letter of alphabet
+		isalnum(char) - alphabet or digit (0-9)
+		isdigit(char) - 0-9
+		islower(char) - lowercase
+		isupper(char) - uppercase
+		isprint(char) - printable character (including space)
+		ispunct(char) - printable character other than digit, letter, or space
+		isspace(char) - whitespace - space '', newline '\n', vertical tab '\v', tab '\t'
 
+C-Strings
+	#include <cstring>
+
+	 strlen(str) - length of char array minus null terminator
+
+	 strcat(str1, str2) - concatenate 2 strings
+	 strcpy(charArr, "") - copy a string to a char array
+	 	Safer to use strncat and strncpy:
+	 	strncat(str1, str2, int) - int is max number of str2 chars to append to str1
+	 	strncpy(str1, str2, int) - int is max number of str2 chars to copy to str1
+
+	 strstr(charArr, "") - search for some string inside a char array
+	 strcmp(char *str1, char *str2)
+	 	returns zero if equal
+	 	returns negative if str1 comes BEFORE str2 alphabetically
+	 	returns positive if str1 comes AFTER str2 alphabetically
+
+	 Numeric Conversion Functions
+
+	 	atoi("12345") - converts C-string to integer
+	 	atol("9999999") - converts C-string to long integer
+	 	atof("12.345") - converts C-string to double, can use as float
+
+	 	to_string(num) - converts number to string
+
+	 	
