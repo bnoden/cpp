@@ -201,6 +201,7 @@ Pointers
 				showArray
 
 Character Testing
+	#include <cctype>
 	returns true (nonzero) or false (0):
 		isalpha(char) - letter of alphabet
 		isalnum(char) - alphabet or digit (0-9)
@@ -236,4 +237,3 @@ C-Strings
 
 	 	to_string(num) - converts number to string
 
-	 	

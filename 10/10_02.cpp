@@ -12,10 +12,8 @@ using namespace std;
 int charCount(char*);
 void rcout(char*);
 
-const int MAX = 256;
-
 void main() {
-	
+	const int MAX = 256;
 	char input[MAX];
 
 	cout << "Enter a string:" << endl;
@@ -30,7 +28,7 @@ void main() {
 
 void rcout(char* ptr) {
 	int size = charCount(ptr);
-	
+
 	for (int i = size-1; i >= 0; i--) {
 		cout << ptr[i];
 	}
