@@ -14,7 +14,132 @@ Files:
 			while (inFile >> value) - read to end of file
 			if (inFile) {something} else {error} - test for file open errors
 				if (infile.fail()) {error} else {something} - alternative to above
-	fstream - file stream
+	fstream - file stream - create, write, and read from files
+		ios
+			example: someFile.open("whatever.txt", io::in); - input mode
+					 someFile.open("whatever.txt", io::out); - output mode
+
+			ios::app - Append mode. All output is appended (added to the end) to the file.
+				creates file if it doesn't exist
+			ios::ate - At The End. Goes directly to end of file. Output may be written anywhere in file.
+			ios::binary - Binary Mode. Data are written to or read from file in binary format.
+			ios::in - Input Mode. Data read from file. File created if none exists.
+			ios::out - Output mode. Data written to file. Contents deleted if it already exists.
+			ios::trunc Deletes (truncates) contents if file exists.
+
+			Error Testing - pr12-6 or p668
+				ios::eofbit - end of input stream is encountered
+					eof() - returns true (nonzero) if eofbit flag is set, else false
+
+				ios::failbit - attempted operation failed
+				ios::hardfail - unrecoverable error occurred
+					fail() - returns true (nonzero) if failbit or hardfailbit are set, else false
+
+				ios::badbit - invalid operation has been attempted
+
+				ios::goodbit - none of the above; good condition
+					good() - returns true (nonzero) if goodbit is set, else false
+
+					clear() - clears all above flags if no arguments
+						or call with specific flag as argument
+
+					example:
+						void showState(fstream &file)  { 
+						   cout << "File Status:\n"; 
+						   cout << " eof bit: " << file.eof() << endl; 
+						   cout << " fail bit: " << file.fail() << endl; 
+						   cout << " bad bit: " << file.bad() << endl; 
+						   cout << " good bit: " << file.good() << endl; 
+						   file.clear();     // Clear any bad bits 
+						}
+
+			combine with | 		pr12-20, pr12-21, 12-22 or p698, p699, p700
+				example: someFile.open("whatever.txt", ios::in | ios::out);
+						- write to and read from file, and contents are preserved
+
+		<EOF> - end-of-file marker
+
+		Use same formatting tools as with cout, such as setprecision(), fixed, etc.
+
+	Passing File Stream Objects to Functions - pr12.3 or p666
+
+	getline(dataFile, str, '\n');
+		reads from dataFile, stores to str, stops reading if it encounters \n
+			\n is default delimiter, but you can use anything
+
+	get Member Function - pr12-10 or p675
+		inFile.get(ch);
+
+	put Member Function - pr12-11 or p676
+		outFile.put(ch);
+
+	Work with multiple files
+		ifstream file1, file2, file3; 
+
+	Binary Files
+		file.open("stuff.dat", ios::out | ios::binary);
+
+		write and read Member Functions - pr12-13
+			write
+				fileObject.write(address, size);
+					address is starting address of section of memory to be written to file
+						expected to be char or pointer to char
+					size is number of bytes to write, must be integer value
+				char letter = 'A'; file.write(&letter, sizeof(letter));
+
+				char data[] = {'A', 'B', 'C', 'D'}; file.write(data, sizeof(data));
+
+			read
+				fileObject.read(address, size);
+
+				char letter; file.read(&letter, sizeof(letter));
+
+				char data[4]; file.read(data, sizeof(data));
+
+		Writing Data other than Char to Binary Files - pr12-14
+			must use type cast
+				reinterpret_cast - convert pointer from one type to another
+					reinterpret_cast<dataType>(value)
+						dataType is type converting to
+						value is value you're converting
+
+							example:
+								int x = 65; char* ptr = nullptr; ptr = reinterpret_cast<char*>(&x);
+
+		Creating Records with Structures - pr12-15, pr12-16 or p686, p687
+			Structures may be used to store fixed-length records into a file
+			Always use ios::binary mode when opening a file to store structures
+
+		Random-Access Files - pr12-17, pr12-18 or p691, p692
+			means nonsequentially accessing data in a file
+				-think of a cd player as apposed to cassette
+
+			seekp ("seek put") for output (put into file)
+				file.seekp(20L, ios::beg);
+					-moves files write position to byte number 20
+						(bytes start at 20, so 21st byte)
+
+			seekg ("seek get") for input (get out from file)
+
+			tellp and tellg - pr12-19 or p694
+
+				ios::beg - offest calculated from beginning of file
+				ios::end - offest calculated from end of file
+				ios::cur - offest calculated from current position
+
+					negative offsets move backwards
+						example: file.seekp(−10L, ios::end);
+							-Sets the write position to the 10th byte from the end of the file. 
+
+				Must use clear() before calling seekg or seekp if end-of-file has been read
+
+			"rewind"
+				dataFile.clear(); dataFile.seekg(0L, ios::beg);
+					clear eliminates the need to close and reopen the file each time
+
+
+
+
 
 C-strings - in older versions of C++
 	strObject.c_str() - returns string stored in strObject as a null-terminated C-string
@@ -276,7 +401,10 @@ Structured Data
 						Name name = Name::TWO;
 						Name2 bob = Name2::TWO;
 
-							static_cast<int>(Name::TWO) to retrieve underlying integer value
+					enum class Day : char { MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY };
+					enum class Water : unsigned { FREEZING = 32, BOILING = 212 };
 
-		
+						static_cast<int>(Name::TWO) to retrieve underlying integer value
+
+
 
