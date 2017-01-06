@@ -37,9 +37,10 @@ void main() {
 }
 
 void getMovie(MovieData mov) {
-	cout << "Title: " << mov.title << endl;
-	cout << "Director: " << mov.director << endl;
-	cout << "Year: " << mov.year << endl;
-	cout << "Running time: " << mov.runningTime << " mintutes" << endl;
-	cout << setprecision(2) << fixed << "First year earnings: " << mov.revenue - mov.cost << endl;
+	cout << "Title: " << "\t\t" << mov.title << endl;
+	cout << "Director: " << '\t'  << mov.director << endl;
+	cout << "Year: " << "\t\t" << mov.year << endl;
+	cout << "Length: " << '\t'  << mov.runningTime << " mintutes" << endl;
+	cout << setprecision(2) << fixed << "Earnings: " << "\t$" << mov.revenue - mov.cost << endl;
+	cout << "----------------------------------" << endl;
 }

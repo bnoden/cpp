@@ -17,7 +17,6 @@ Input Validation: Do not accept negative values for players’ numbers or points
 */
 
 #include <iostream>
-#include <iomanip>
 #include <string>
 using namespace std;
 
@@ -28,7 +27,7 @@ struct Player {
 };
 
 void main() {
-	const int TEAM_SIZE = 3;
+	const int TEAM_SIZE = 12;
 
 	Player players[TEAM_SIZE];
 
