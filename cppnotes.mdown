@@ -237,3 +237,46 @@ C-Strings
 
 	 	to_string(num) - converts number to string
 
+Structured Data
+	struct
+		struct Tag {}; Remember the semicolon
+			capitalize first letter of name (tag)
+
+		Initialization List - example:
+			struct City {string name; string state;};
+				City city = {"Dallas", "TX"};
+
+		Dereference a struct variable with -> instead of *
+			example:
+				Circle *cirPtr = nullptr; cirPtr = new Circle; cirPtr->radius = 10;
+
+	Union
+		union Tag {};
+			union {}; - Anonymous union
+		Like a structure, but all members occup the same memory area
+			So only one member can be used at a time
+				They conserve memory
+
+		If global, must be declared static.
+			static union Tag {};
+
+	Enumerated Data Type
+		enum Name {ONE, TWO, THREE, FOUR};
+			or enum Water {FREEZING = 32, BOILING = 212}; 	to assign values explicitly
+			or enum Car {FORD, CHEVY, JEEP} someCar, anotherCar; 	to define variables at same time
+				notice there's no semicolon until after variables
+			
+		static_cast<Name>(ONE+1); to use enums like regular ints
+
+		Must be unique within same scope unless strongly typed:
+			Strongly Typed enums:
+				enum class Name {ONE, TWO, THREE};
+				enum class Name2 {TWO, FOUR, SIX}
+					CAN use same enum names within scope
+						Name name = Name::TWO;
+						Name2 bob = Name2::TWO;
+
+							static_cast<int>(Name::TWO) to retrieve underlying integer value
+
+		
+
