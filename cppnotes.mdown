@@ -20,7 +20,7 @@ Files:
 					 someFile.open("whatever.txt", io::out); - output mode
 
 			ios::app - Append mode. All output is appended (added to the end) to the file.
-				creates file if it doesn't exist
+				creates file if it doesnt exist
 			ios::ate - At The End. Goes directly to end of file. Output may be written anywhere in file.
 			ios::binary - Binary Mode. Data are written to or read from file in binary format.
 			ios::in - Input Mode. Data read from file. File created if none exists.
@@ -101,7 +101,7 @@ Files:
 				reinterpret_cast - convert pointer from one type to another
 					reinterpret_cast<dataType>(value)
 						dataType is type converting to
-						value is value you're converting
+						value is value youre converting
 
 							example:
 								int x = 65; char* ptr = nullptr; ptr = reinterpret_cast<char*>(&x);
@@ -202,8 +202,8 @@ STL (Standard Template Library)
 			cannot use it to access element that does not yet exist
 
 		Advantages over arrays:
-			You don't have to declare the number of elements it will have
-			If you add a value to a vector that's already full, it will automatically increase size
+			You dont have to declare the number of elements it will have
+			If you add a value to a vector thats already full, it will automatically increase size
 			Vectors can report the number of elements they contain
 
 Searching and Sorting Arrays
@@ -261,7 +261,7 @@ Pointers
 	Defining pointer variables:
 		int *ptr;	int means it can hold the address of an int variable
 			the above means "ptr is a pointer to an int"
-			could also be written as int* ptr; to make it clear that it's a pointer rather than int
+			could also be written as int* ptr; to make it clear that its a pointer rather than int
 
 		Always define pointer by initializing with valid memory address
 			nullptr - points to address 0
@@ -311,7 +311,7 @@ Pointers
 							return ptr;
 						 }
 
-	Smart Pointers - automatically deletes memory when it's done with item
+	Smart Pointers - automatically deletes memory when its done with item
 		introduced in C++11
 
 		#include <memory>
@@ -335,7 +335,7 @@ Character Testing
 		isupper(char) - uppercase
 		isprint(char) - printable character (including space)
 		ispunct(char) - printable character other than digit, letter, or space
-		isspace(char) - whitespace - space '', newline '\n', vertical tab '\v', tab '\t'
+		isspace(char) - whitespace - space , newline '\n', vertical tab '\v', tab '\t'
 
 C-Strings
 	#include <cstring>
@@ -389,7 +389,7 @@ Structured Data
 		enum Name {ONE, TWO, THREE, FOUR};
 			or enum Water {FREEZING = 32, BOILING = 212}; 	to assign values explicitly
 			or enum Car {FORD, CHEVY, JEEP} someCar, anotherCar; 	to define variables at same time
-				notice there's no semicolon until after variables
+				notice theres no semicolon until after variables
 			
 		static_cast<Name>(ONE+1); to use enums like regular ints
 
@@ -407,4 +407,114 @@ Structured Data
 						static_cast<int>(Name::TWO) to retrieve underlying integer value
 
 
+Classes
+
+	members are PRIVATE by default, unlike structures
+	dont forget semicolon at the end of class
+	class names should start with uppercase
+
+	use const for values that shouldnt be changed outside the function
+		Good practice to mark all accessor functions as const
+		example:
+			double getWidth() const;
+				double Rectangle::getWidth() const
+					{ return width; }
+					
+					:: is called scope resolution operator
+
+	Avoid Stale Data - p730
+		example: instead of member variable double area, use double getArea() const;
+			-because it is dependent on length and width, which may change
+
+	Pointers to Objects - pr13-3
+
+		example:
+			Rectangle *rectPtr = nullptr; // Define a Rectangle pointer. 
+			rectPtr = new Rectangle; // Dynamically allocate a Rectangle object. 
+			rectPtr->setWidth(10.0); // Store values in the object's width and length. 
+			rectPtr->setLength(15.0); 
+			delete rectPtr; // Delete the object from memory. 
+			rectPtr = nullptr;
+
+		Using Smart Pointers to Allocate Objects - self-deleting - pr13-4
+			#include <memory>
+				unique_ptr<Rectangle> rectanglePtr(new Rectangle);
+
+	Separate Class Specification from Implementation
+		Use three separate files: - pr13-5, Appendix M
+			1. class declaration header file
+				aka class specification file
+					ClassName.h or Rectangle.h
+						#ifndef - if not defined - if (!defined)
+							-include guard - prevents header file from being included more than once
+						#define - define - include the following lines - {define()}
+						#endif - end if - ;
+								
+								so if (!defined) {define()}end;
+
+			2. member function definitions
+				aka class implementation file
+					ClassName.cpp or Rectangle.cpp
+			3. program that uses the class
+				#include "ClassName.h"
+					use <> for system header files located in compilers INCLUDE FILE DIRECTORY
+						-where all the standard C++ header files are located
+
+		Inline Member Functions - p745
+			-written inside a class declaration, when member function is small
+
+
+	Constructors - pr13-6 or p746
+		initialization routines
+		useful for initializing member variables or performing other setup functions
+			initialize data members to valid values before those members are used by other code
+
+		class Rectangle {
+		public:
+			Rectangle(); // constructor
+		};
+		Rectangle::Rectangle() {
+			// Do stuff
+		}
+			-no return type
+
+		Passing arguments to constructors - pr13-9 or p750
+			default arguments - pr13-10 or p756
+
+		Default constructor has no arguments
+			If all constructors require arguments, there is not default constructor
+				-and you must pass the required arguments when creating object
+
+	Destructors - pr13-11 or p758
+		~ClassName(); - class name preceded by tilde ~
+
+	Overloading Constructors - pr13-13 or p762
+		Can have constructors with same name if arguments are different
+			same thing with member functions
+		But only 1 default constructor and one destructor
+
+
+	Private Member Functions
+		may onlky be called from a function that is a member of the same class
+		 for internal use within the class 
+
+	Arrays of Objects - pr13-14 or p767
+
+	UML - Unified Modeling Language - p786
+		Class Name
+		Member Variables : data type
+		Member Functions : data type
+		"-" means private 
+		"+" means public 
+
+			example:
+				Rectangle 
+				- width : double
+				- length : double
+				+ Rectangle() // constructor
+				+ setWidth(w : double) : void
+				+ setLength(len : double) : void
+				+ getWidth() : double
+				+ getLength() : double
+				+ getArea() : double
 
