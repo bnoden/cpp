@@ -27,26 +27,29 @@ public:
 	string getAddress() {return Address;}
 	int getAge() {return Age;}
 	string getPhone() {return Phone;}
+	void showContactInfo();
 
 	Contact() {}
-	Contact(string name, string phone, string address, int age) {
-		Name = name;
-		Phone = phone;
-		Address = address;
-		Age = age;
-	}
-
-	void showContactInfo() {
-		cout << "Name: " << getName() << '\t' << "#: " << getPhone() << endl;
-		cout << "Address: " << getAddress() << '\t' << "Age: " << getAge() << endl;
-	}
+	Contact(string, string, string, int);
 };
+
+Contact::Contact(string name, string phone, string address, int age) {
+	Name = name;
+	Phone = phone;
+	Address = address;
+	Age = age;
+}
+
+void Contact::showContactInfo() {
+	cout << "Name: " << getName() << '\t' << "#: " << getPhone() << endl;
+	cout << "Address: " << getAddress() << '\t' << "Age: " << getAge() << endl;
+}
 
 void main() {
 	Contact bnoden("bnoden", "9728444444", "1111 Oak St", 74);
 	Contact gf("Christine", "2145554679", "12345 Love Dr", 27);
 	Contact d;
-	
+
 	d.setAddress("1234 Oak St");
 	d.setPhone("9725554613");
 	d.setAge(45);
