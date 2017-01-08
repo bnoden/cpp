@@ -23,10 +23,12 @@ public:
 	void setAddress(string address) {Address = address;}
 	void setAge(int age) {Age = age;}
 	void setPhone(string phone) {Phone = phone;}
-	string getName() {return Name;}
-	string getAddress() {return Address;}
-	int getAge() {return Age;}
-	string getPhone() {return Phone;}
+
+	string getName() const {return Name;}
+	string getAddress() const {return Address;}
+	int getAge() const {return Age;}
+	string getPhone() const {return Phone;}
+
 	void showContactInfo();
 
 	Contact() {}

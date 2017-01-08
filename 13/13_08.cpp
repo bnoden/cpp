@@ -35,13 +35,15 @@ public:
 
 	Circle() {radius = 0.0;}
 	Circle(double r) {radius = r;}
+
 	void showCircle();
 
 	void setRadius(double r) {radius = r;}
-	double getRadius() {return radius;}
-	double getArea() {return pi*radius*radius;}
-	double getDiameter() {return radius*2.0;}
-	double getCircumference() {return 2*pi*radius;}
+
+	double getRadius() const {return radius;}
+	double getArea() const {return pi*radius*radius;}
+	double getDiameter() const {return radius*2.0;}
+	double getCircumference() const {return 2*pi*radius;}
 };
 
 void Circle::showCircle() {
