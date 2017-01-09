@@ -39,7 +39,6 @@ public:
 	static const string hundred;
 	static const string thousand;
 
-	Numbers();
 	Numbers(int);
 	void print(Numbers);
 };
@@ -47,7 +46,6 @@ public:
 Numbers::Numbers(int num) {
 	numString = "";
 	number = num;
-	//int temp = 0;
 
 	if (num < 10) {
 		numString = ones[num];
@@ -56,7 +54,6 @@ Numbers::Numbers(int num) {
 		numString = teens[num-10];
 	}
 	else if (num < 100) {
-		//temp = number%10;
 		numString = tens[(num/10)-2];
 		if (num%10 != 0) { numString += " " + ones[number%10]; }
 	}
