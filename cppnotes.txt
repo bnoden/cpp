@@ -391,7 +391,7 @@ Structured Data
 			or enum Car {FORD, CHEVY, JEEP} someCar, anotherCar; 	to define variables at same time
 				notice theres no semicolon until after variables
 			
-		static_cast<Name>(ONE+1); to use enums like regular ints
+		static_cast<Name>(ONE+1);	- to use enums like regular ints
 
 		Must be unique within same scope unless strongly typed:
 			Strongly Typed enums:
@@ -518,3 +518,91 @@ Classes
 				+ getLength() : double
 				+ getArea() : double
 
+	Instance and Static Members - p811
+		instance members require an instance of the class
+		 -while static members are shared amongst all instances, can be called directly from the class 
+		 	only 1 copy of static variable is saved into memory
+
+		 instance: Circle circle; circle.pi();
+		 static: Circle::pi();	- note the :: when calling static members directly from the class 
+
+	Friends of Classes - p819
+		-functions or classes that have access to private members from another class 
+			example: friend double Rectangle::getLength();
+
+		forward declaration - pr14-4 or p821
+			-put in class.h file before class declaration
+				class Rectangle;
+				class Circle {};
+
+		only declare friends when necessary
+
+	Memberwise Assignment - p824
+		Circle c1(5); Circle c2;
+			c2 = c1;
+				or just Circle c2 = c1;
+
+			-works just like other variables (except arrays)
+
+	Copy Constructors p825
+		Called when a new object is created and initialized with another objects data
+
+		example:
+			// use const to make sure it can't change the value of the parameter
+			Circle(const Circle &obj) {		// parameter must be a reference object
+				radius = obj.radius;
+			}
+
+		If no copy constructor, a default copy constructor is created, which uses memberwise assignment (obj2 = obj1)
+
+	Operator Overloading - StudentTestScores v3, pr14-6 or p832, p834
+		example:
+		// function name is "operator =", could put spaces around operator "void operator = ()"
+			// right refers to the right side of the operator, but can have any name
+				// need not be reference but it's safer
+		void operator=(const studentTestScores &right) {
+			delete [] testScores;
+			studentName = right.studentName;
+			numTestScores = right.numTestScores;
+			testScores = new double[numTestScores];
+			for (int i = 0; i < numTestScores; i++)
+				testScores[i] = right.testScores[i];
+		}
+
+			student2 = student1;
+				is the same as
+			student2.operator=(student1);
+
+		the this pointer - pr14-7 or p836
+			this - always points to the instance of the class making the function call 
+				example: circle2.getRadius(this) == circle2.getRadius(student1)
+
+				note: this is passed as a hidden argument to all nonstatic functions
+
+	Overloading Math Operators	-	pr14-8 or p838
+
+		Operators that can be overloaded:
+			+	-	*	/	%	^	&	|	~	!	=	<	>
+			+=	-=	*=	/=	%=	^=	&=	|=	<<	>>	>>=	<<=	==
+			++	--	!=	<=	>=		&&	||	_>*	,	_>	[]	()
+			new 	delete
+
+		Cannot be overloaded:
+			?:	.	.*	::	sizeof
+
+		Overloading the Prefix and Postfix ++ Operators 	-	pr 14-9 or p843
+
+		Overloading the << and >> operators 	-	pr14-11 or p848
+
+		Overloading the [] operator 	-	pr14-12 or p852
+			write classes that have array-like behaviors
+
+	Object Conversion 	-	pr14-4 or p858
+
+	Aggregation	- pr14-15 or p860
+		-when a class contains an instance of another class 
+
+	Class Collaborations - pr14-16 or p865
+		CRC cards - p868
+
+	
