@@ -498,6 +498,66 @@ Classes
 		may onlky be called from a function that is a member of the same class
 		 for internal use within the class 
 
+	Protected Members - pr15-3, GradedActivity version 2 or p900
+		-like private but may be accessed by derived classes 
+
+	Access Specification:	p904, p905
+		private
+			Private members of the base class are inaccessible to the derived class. 
+			Protected members of the base class become private members of the derived class. 
+			Public members of the base class become private members of the derived class. 
+		protected
+			Private members of the base class are inaccessible to the derived class. 
+			Protected members of the base class become protected members of the derived class. 
+			Public members of the base class become protected members of the derived class. 
+		public
+			Private members of the base class are inaccessible to the derived class. 
+			Protected members of the base class become protected members of the derived class. 
+			Public members of the base class become public members of the derived class. 
+	
+			Base class constructor is called before the derived class constructor
+			Destructors are called in reverse order
+
+		Passing Arguments to Base Class Constructors - pr15-5 or p907, p908
+
+		Redefining Base Class Functions - pr15-7, pr15-8 or p918
+			Base class member functions may be redefined in a derived class 
+				-when a derived class has a function with the same name as a base class function 
+					-objects of the base class type will still call the base class version of the function
+
+		Polymorphism and Virtual Member Functions - pr15-10, pr15-13 or p929
+			requires reference or pointers 
+			binding	- p930
+
+			Place virtual keyword online in function declaration or prototype
+
+			base class pointers and references only know about base class members - p939
+
+			virtual destructors - pr15-15, pr15-16 or p940
+				If class with destructor could become base class, declare the destructor virtual 
+					Else the compiler will perform static binding on the destructor 
+
+			override and final key words - pr15-17 or p943
+				override - pr15-18
+
+				final - virtual member function cannot be overridden by other classes 
+					ex: virtual void message() const final;
+
+		Abstract Base Classes and Pure Virtual Functions - pr15-19, Student.h or p945
+
+			When a class contains a pure virtual function, it is an abstract base class. 
+			Pure virtual functions are declared with the = 0 notation. 
+			Abstract base classes cannot be instantiated. 
+			Pure virtual functions have no body, or definition, in the base class. 
+			A pure virtual function must be overridden at some point in a derived class
+				-in order for it to become nonabstract.
+
+		Multiple Inheritance - pr15-20 or p952
+			when a derived class has 2 or more base classes 
+				ex: class DateTime : public Date, public Time
+
+
+
 	Arrays of Objects - pr13-14 or p767
 
 	UML - Unified Modeling Language - p786
@@ -605,4 +665,3 @@ Classes
 	Class Collaborations - pr14-16 or p865
 		CRC cards - p868
 
-	
