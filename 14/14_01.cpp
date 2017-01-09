@@ -33,8 +33,8 @@ private:
 	int number;
 	string numString;
 public:
-	static const string teens[10];
 	static const string ones[10];
+	static const string teens[10];
 	static const string tens[8];
 	static const string hundred;
 	static const string thousand;
@@ -47,18 +47,40 @@ public:
 Numbers::Numbers(int num) {
 	numString = "";
 	number = num;
-	if (number < 10) { numString = ones[num]; }
-	else if (number < 20) { numString = teens[num-10]; }
+	//int temp = 0;
+
+	if (num < 10) {
+		numString = ones[num];
+	}
+	else if (num < 20) {
+		numString = teens[num-10];
+	}
+	else if (num < 100) {
+		//temp = number%10;
+		numString = tens[(num/10)-2];
+		if (num%10 != 0) { numString += " " + ones[number%10]; }
+	}
+	else if (num < 1000) {
+		numString = ones[num/100] + " " + hundred;
+		if (num%100 != 0) { numString += " " + tens[((number-((num/100)*100))/10)-2]; }
+		if (num%10 != 0) { numString += " " + ones[number%10]; }
+	}
+	else if (num <= 9999) {
+		numString = ones[num/1000] + " " + thousand;
+		if (num%1000 != 0) { numString += " " + ones[(number-(num/1000)*1000)/100] + " " + hundred; }
+		if (num%100 != 0) { numString += " " + tens[((number-((num/100)*100))/10)-2]; }
+		if (num%10 != 0) { numString += " " + ones[number%10]; }
+	}
 }
 
 void Numbers::print(Numbers n) {
 	cout << n.numString;
 }
 
-const string Numbers::teens[] = {"ten", "eleven", "twelve", "thirteen", "fourteen",
-"fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
 const string Numbers::ones[] = {"zero", "one", "two", "three", "four",
 "five", "six", "seven", "eight", "nine"};
+const string Numbers::teens[] = {"ten", "eleven", "twelve", "thirteen", "fourteen",
+"fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
 const string Numbers::tens[] = {"twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety"};
 const string Numbers::hundred = "hundred";
 const string Numbers::thousand = "thousand";
