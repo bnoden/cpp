@@ -770,3 +770,46 @@ STL (Standard Template Library)
 			If you add a value to a vector thats already full, it will automatically increase size
 			Vectors can report the number of elements they contain
 
+Linked Lists 
+
+	struct ListNode {
+		double value;
+		ListNode *next;		// self-referential data structure
+	};
+	ListNode *head;
+	NumberList() {
+		head = nullptr;
+	}
+	
+		Appending node to list - pr17-1 or p1028
+		Traversing a linked list - pr17-2 or p1033, p1034
+		Inserting a node - pr17-3 or p1035
+		Deleting a node - pr17-4 or p1039
+		Destroying the list - p1042, p1043
+
+	Linked List Template - pr17-5, LinkedList.h v1 or p1043
+
+		Using a class node type - LinkedList.h v2 or p1049, p1050
+
+	doubly linked list and circular linked list - p1055
+
+	The STL list Container - pr17-6 or p1056
+		list.back() - return reference to last element in list
+		list.empty() - return true if list is empty, else false 
+		list.end() - return a bidirectional iterator to end of list 
+		list.erase(i)			remove i 
+			list.erase(i1, i2)	remove all elements from i1 to i2
+		list.front() - return reference to first element of list 
+		list.insert(i, el) - insert element into list at i
+		list1.merge(list2) - insert all items in list2 to list1. list1 expands if need be. assumes both are sorted.
+		list.pop_back() - remove last element 
+		list.pop_front() - remove first element 
+		list.push_back(x) - insert element with value x at end of list 
+		list.push_front(x) - insert element with value x at beginning of list 
+		list.reverse() - reverse the order in which elements appear in list 
+		size - return number of elements in list 
+		list1.swap(list2) - swaps the elements between the two lists 
+		list.unique() - remove any element that has the same value as the one before it 
+
+
+
