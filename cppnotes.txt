@@ -157,54 +157,6 @@ Range-based for loop:
 	example - int numbers[] = {3,6,9};
 				for (int val : numbers) { cout << val << endl; }
 
-STL (Standard Template Library)
-	data types defined in STL commonly called containers, because they store and organize data
-		2 types
-			sequence containers
-				organizes data in a sequential fashion, similar to an array
-			associative containers
-				organizes data with keys, which allow rapid, random access to elements stored in container
-
-	STL vector
-		#include <vector> (must have using namespace std;)
-			vector<int> numbers;
-			vector<int> numbers(10); to define starting size
-			vector<int> numbers(10, 2); to define starting size of 10, each element initialized to 2
-			vector<int> set2(set1); initializes set2 by copying set 1 to it
-			vector<int> numbers { 10, 20, 30, 40 }; initializes vector with list of values
-				no need for equals sign like array: int numbers[] = { 10, 20, 30, 40 };
-				numbers[i] can be replaced with new value
-			Rang-based for loops is same as array:
-				vector<int> numbers { 3, 6, 9};
-					for (int val : numbers) { cout << val << endl; }
-			push_back
-				numbers.push_back(25); puts 26 in last element, or adds as new element if full
-			pop_back
-				numbers.pop_back(); removes the last element
-			clear
-				numbers.clear(); clears all elements
-			empty
-				if (numbers.empty()) determines if vector is empty
-			size
-				x = numbers.size(); x = size of vector
-			at
-				x = numbers.at(5); x = the value of the 6th element (an array would be numbers[5])
-			reverse
-				numbers.reverse(); reverses the order of elements
-			resize(elements, value)
-				numbers.resize(5, 1); increases size by 5 and initializes the new elements to 1
-			swap(vector2)
-				set1.swap(set2); swaps contents of set1 with set2
-
-		holds a sequence of values, or elements
-		stores its elements in contiguous memory locations
-		you can use array subscript operator [] to read individual elements in the vector
-			cannot use it to access element that does not yet exist
-
-		Advantages over arrays:
-			You dont have to declare the number of elements it will have
-			If you add a value to a vector thats already full, it will automatically increase size
-			Vectors can report the number of elements they contain
 
 Searching and Sorting Arrays
 	Linear Search
@@ -664,4 +616,157 @@ Classes
 
 	Class Collaborations - pr14-16 or p865
 		CRC cards - p868
+
+
+Exception Handling
+	throw
+	try/catch	pr16-1 or p972
+		try {
+		}
+		catch() {
+		}
+
+	Exception Handling with Classes - pr16-2, Rectangle.h, Rectangle.cpp version 1 or p975
+	Multiple Exceptions - pr16-3, Rectangle v3 or p978
+	Recover from errors - pr16-4 or p982
+		bool tryAgain = true; // Flag to reread input
+
+			while(tryAgain) {
+				try {}
+				catch() {}
+			}
+
+	Extract data from exception class pr16-5 or p983
+
+	bad_alloc - pr16-6 or p988
+
+Templates
+
+	Function Templates - pr16-7, pr16-8 or p990
+		ex:
+		template <class T>	// T is type parameter
+		T square(T number) { return number*number;}
+
+		All type parameters defined in a function template must appear at least once in the function parameter list
+		Templates should be placed near top of program or header file 
+
+		Function templates with multiple types - pr16-9 or p994
+			template <class T1, class T2> int largest(const T1 &var1, T2 &var2) { }
+
+		Overloading with function templates - pr16-10 or p 995
+
+		often easier to convert an existing function than to write a template from scratch - p996
+
+	Class Templates - p996
+		
+		defining objects - pr16-11 or p1000
+			SimpleVector<int> intTable(10); 
+			SimpleVector<double> doubleTable(10); 
+
+		inheritance - pr16-12 or p1002
+			class SearchableVector : public SimpleVector<T> {}
+			SearchableVector() : SimpleVector<T>() 
+			SearchableVector(int size) : SimpleVector<T>(size) 
+
+		specialized class templates - p1004
+			in declaration, use actual data type instead of T parameter 
+				class SimpleVector<char *> {}
+
+
+STL (Standard Template Library)
+	containers and iterators - p1006
+
+		Containers - pr16-13
+			sequence containers - p1006
+				organizes data in a sequential fashion, similar to an array
+					vector - expandable array
+					deque - like vector, but value can be added to or removed from the front
+					list - double linked list of data elements. can add values to or remove them from any position
+
+			associative containers
+				organizes data with keys, which allow rapid, random access to elements stored in container
+					set - stores a set of keys. no duplicates
+					multiset - like set but allows duplicates
+
+					map - maps a set of keys to data elements. one key per element, no duplicates
+					multimap - allows many keys, allows duplicates
+
+		Iterators - pr 16-14 or p1006, p1007
+			generalizations of pointers, used to access data stored in containers 
+
+			Forward - can only move forward (++)
+			Bidirectional - moves forward or backward (++ and -)
+			Random-access - moves forward, backward, and can jump to specific element 
+			Input - used with input stream to read data from input device or file 
+			Output - used with output stream to write data from output device or file
+
+				Iterators  are  associated  with  containers.  The  type  of  container  you  have  determines  the  
+				type of iterator you use. For example, vectors and deques require random-access iterators, while  
+				lists, sets, multisets, maps, and multimaps require bidirectional iterators. 
+
+	STL Algorithms - pr16-15, pr16-16, pr16-17 or p1007, 1013
+
+		binary_search
+		count -	pr 16-16
+		find - pr 16-18
+		for_each - pr16-19
+		max_element - pr16-17 
+		min_element
+		random_shuffle
+		sort 
+
+
+
+
+	STL vector
+		#include <vector> (must have using namespace std;)
+			vector<int> numbers;
+			vector<int> numbers(10); to define starting size
+			vector<int> numbers(10, 2); to define starting size of 10, each element initialized to 2
+			vector<int> set2(set1); initializes set2 by copying set 1 to it
+			vector<int> numbers { 10, 20, 30, 40 }; initializes vector with list of values
+				no need for equals sign like array: int numbers[] = { 10, 20, 30, 40 };
+				numbers[i] can be replaced with new value
+			Rang-based for loops is same as array:
+				vector<int> numbers { 3, 6, 9};
+					for (int val : numbers) { cout << val << endl; }
+
+			push_back
+				numbers.push_back(25); puts 26 in last element, or adds as new element if full
+			pop_back
+				numbers.pop_back(); removes the last element
+			clear
+				numbers.clear(); clears all elements
+			empty
+				if (numbers.empty()) determines if vector is empty
+			size
+				x = numbers.size(); x = size of vector
+			at
+				x = numbers.at(5); x = the value of the 6th element (an array would be numbers[5])
+			reverse
+				numbers.reverse(); reverses the order of elements
+			resize(elements, value)
+				numbers.resize(5, 1); increases size by 5 and initializes the new elements to 1
+			swap(vector2)
+				set1.swap(set2); swaps contents of set1 with set2
+
+			operator[] - allows array-like access of existing vector elements
+			capacity() - returns maximum number of elements vector can store without more memory 
+			front() - first element of vector 
+			end() - last element of vector 
+			erase() - remove that element 
+				erase(i1, i2) - erase all elements from i1 to i2
+			insert(i, val) - insert value into vector 
+
+
+
+		holds a sequence of values, or elements
+		stores its elements in contiguous memory locations
+		you can use array subscript operator [] to read individual elements in the vector
+			cannot use it to access element that does not yet exist
+
+		Advantages over arrays:
+			You dont have to declare the number of elements it will have
+			If you add a value to a vector thats already full, it will automatically increase size
+			Vectors can report the number of elements they contain
 
