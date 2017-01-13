@@ -824,3 +824,13 @@ Stacks and Queues
 
 
 	STL deque and queue Containers - p1113
+
+
+Recursion
+
+	Recursive functions - pr19-3 or p1126, p1127 
+		count chars - pr19-4 or p1130
+
+	Direct - function calls itself 
+	Indirect - a calls b, which calls a, etc.
+	
