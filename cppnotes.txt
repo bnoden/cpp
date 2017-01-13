@@ -812,4 +812,15 @@ Linked Lists
 		list.unique() - remove any element that has the same value as the one before it 
 
 
+Stacks and Queues
+	
+		Static Stack Class - pr18-1, IntStack.h, IntStack.cpp or p1065
+		Static Stack Template - pr18-3, Stack.h or p1074
 
+	Dynamic Stacks - pr18-4, DynIntStack or  p1080
+		Dynamic Stack Template - pr18-5, DynamicStack.h or p1085
+
+	STL stack Container - pr18-6 or p1091
+
+
+	STL deque and queue Containers - p1113
