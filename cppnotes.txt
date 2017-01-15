@@ -834,3 +834,24 @@ Recursion
 	Direct - function calls itself 
 	Indirect - a calls b, which calls a, etc.
 	
+
+Binary Trees 
+	pr IntBinaryTree.h or p1159
+		struct TreeNode {
+			int value;
+			TreeNode* left;
+			TreeNode* right;
+		};
+
+	Traversing the tree - pr20-2 or p1162, p1163 
+		Inorder - current nodes left subtree traversed, data processed, right subtree traversed
+		Preorder - current nodes data processed, left subtree traversed, right subtree traversed 
+		Postorder - left traversed, right traversed, data processed
+
+	Searching the tree - pr20-3 or p1165
+
+	Deleting a node - pr20-4 or p1166
+
+	Templates - pr20-5 or p1175
+		must support the <, >, and == operators 
+		
