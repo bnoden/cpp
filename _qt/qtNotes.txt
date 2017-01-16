@@ -1,0 +1,142 @@
+QApplication app(argc, argv); - application object - each Qt GUI application must create this object
+
+
+Makefile build steps: compiling and linking - p18
+	make
+		Rules
+		Sources and Headers
+		Targets
+		Dependencies
+
+	qmake - generates Makefiles
+		project file
+
+			qmake -project
+
+			.pro file is first place to look when you encounter not found or undefined messages during build process
+			must add new items to .pro file
+
+			win32 {
+				CONFIG += console
+			}
+
+		3 ways to #include header file:
+			#include <headerFile> - preprocessor must look sequentially in directories listed in include path
+			#include "headerFile" - preprocessor must look for headerFile in the including file's directory list 
+			#include "path/to/headerFile" - preprocessor should check the path directory first
+												path information can be absolute or relative
+
+			#include non-Qt header files AFTER Qt header files - to avoid (or locate) name clashes
+
+Avoid C-strings (const char*)
+
+Use QString
+	#include <QString>
+	#include <QTextStream>
+
+		cin.readLine(); - to extract a QString from standard input stream 
+
+	manipulators
+		flush
+		endl
+		
+
+5 ways to initialize QStrings:
+	1.	QString str1 = "The night train";
+
+	2.	QString str1("The night train");
+
+	3.	std::string s1 = "The night train";
+		QString str1 = s1.c_str();
+
+	4.	std::string s1 = "The night train";
+		QString str1 = QString::fromLatin1(s1.data(), s1.size());
+
+	5.	char s1[] = "The night train";
+		QString str1(s1);
+
+A QString is a sequence of QChars 
+	Access QString elements using [] or at()
+		str1[0] == str1.at(0)
+
+3 ways to get QString length:
+	.size()
+	.count()
+	.length()
+
+String building 
+	QString s3 = "We have %1 lemons and %2 oranges";
+	int ln = 12;
+	int on = 4;
+	out << s3.arg(ln).arg(on) << endl;	// We have 12 lemons and 4 oranges
+
+Substrings 
+	str.left(4) - 4 leftmost chars 
+	str.right(4) - 4 rightmost chars 
+	str.mid(4, 3) - 3 chars starting from 4th position 
+
+
+Looping through strings 
+	QTextStream out(stdout);
+	QString str = "There are many stars.";
+	
+	foreach (QChar qc, str) {
+		out << qc << " ";	// T h e r e   a r e   m a n y   s t a r s . 
+	}
+
+	for (QChar* i = str.begin(); i != str.end(); ++i) {
+		out << *i << " ";	// T h e r e   a r e   m a n y   s t a r s . 
+	}
+
+	for (int i = 0; i < str.size(); ++i) {
+		out << str.at(i) << " ";	// T h e r e   a r e   m a n y   s t a r s . 
+	}
+
+String comparison 
+	QString::compare(str1, str2) is like strcmp(char *str1, char *str2)
+		returns zero if equal
+	 	returns negative if str1 comes BEFORE str2 alphabetically
+	 	returns positive if str1 comes AFTER str2 alphabetically
+
+Converting strings 
+	.toInt()
+	.toFloat()
+	.toLong()
+
+Character testing 
+	.isDigit()	//	isdigit(char) - 0-9
+	.isLetter() //	isalpha(char) - letter of alphabet
+	.isSpace() //	isspace(char) - whitespace - space , newline '\n', vertical tab '\v', tab '\t'
+	.isPunct() //	ispunct(char) - printable character other than digit, letter, or space
+
+Aligning strings 
+	.leftJustified(width, ' ')
+	.rightJustified(width, ' ')
+
+Escaping characters 
+	.toHtmlEscaped()
+
+Qt Style Sheets 
+	similar to CSS - https://www.w3.org/TR/REC-CSS2/selector.html
+		ex:
+			CSS: h1 		{ color: red; background-color: white; }
+			Qt:  QLineEdit 	{ color: red; background-color: white; }
+
+	In Qt, a style sheet can be applied to a single widget by calling
+		QObject::setStyleSheet() function in C++ code,
+			for example: myPushButton->setStyleSheet("color : blue");
+
+	supports selectors defined in CSS2 standard 
+		universal selector, type selector, class selector, ID selector 
+			QLineEdit#usernameEdit { background-color: blue }
+
+Signals and Slots 
+
+	Signals and slots are used for communication between objects.
+	A signal is emitted when a particular event occurs.
+	A slot is a normal C++ method; it is called when a signal connected to it is emitted.
+
+	Events and Signals 
+		event source 
+		event object 
+		event target 
