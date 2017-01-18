@@ -140,3 +140,12 @@ Signals and Slots
 		event source 
 		event object 
 		event target 
+
+		connect(quitBtn, &QPushButton::clicked, qApp, &QApplication::quit);
+			-connect() connects a signal to the slot 
+
+		void KeyPress::keyPressEvent(QKeyEvent *e) {
+			if (e->key() == Qt::Key_Escape) { qApp->quit(); }
+		}
+
+		
