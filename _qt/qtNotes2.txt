@@ -1,0 +1,17 @@
+Shortcuts: 
+
+	Ctrl+B 	build project 
+	F5 		run application
+
+
+Q Tips: 
+
+	If your class only uses pointers or references for a class type, you can avoid including 
+		the header by using forward declaration. This drastically reduces compilationt time. 
+
+
+Signals and Slots - and connections 
+	Signal - message sent by object 
+	Slot - function to be called when signal is triggered 
+	connect - function specifies which signal is linked to which slot 
+
