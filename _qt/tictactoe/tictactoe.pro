@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2017-01-20T00:55:58
+# Project created by QtCreator 2017-01-21T01:58:54
 #
 #-------------------------------------------------
 
@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = todo
+TARGET = tictactoe
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -24,11 +24,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
-    task.cpp
+        tictactoewidget.cpp
 
-HEADERS  += mainwindow.h \
-    task.h
-
-FORMS    += mainwindow.ui \
-    task.ui
+HEADERS  += tictactoewidget.h
