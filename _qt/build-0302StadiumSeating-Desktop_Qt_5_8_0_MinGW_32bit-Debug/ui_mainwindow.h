@@ -21,7 +21,6 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -34,13 +33,13 @@ public:
     QLabel *label;
     QLabel *label_2;
     QLabel *label_3;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_2;
-    QLineEdit *lineEdit_3;
+    QLineEdit *lineA;
+    QLineEdit *lineB;
+    QLineEdit *lineC;
     QLabel *label_4;
-    QTextEdit *textEdit;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QPushButton *btnClear;
+    QPushButton *btnExit;
+    QLineEdit *lineTotal;
     QMenuBar *menuBar;
     QMenu *menuStadium_Seating;
     QToolBar *mainToolBar;
@@ -70,44 +69,43 @@ public:
         label_3->setGeometry(QRect(11, 69, 70, 22));
         label_3->setStyleSheet(QLatin1String("\n"
 "font: 75 14pt \"Consolas\";"));
-        lineEdit = new QLineEdit(centralWidget);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(89, 11, 88, 22));
-        lineEdit->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
+        lineA = new QLineEdit(centralWidget);
+        lineA->setObjectName(QStringLiteral("lineA"));
+        lineA->setGeometry(QRect(89, 11, 88, 22));
+        lineA->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
 "color: rgb(255, 0, 4);"));
-        lineEdit_2 = new QLineEdit(centralWidget);
-        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(89, 40, 88, 22));
-        lineEdit_2->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
+        lineB = new QLineEdit(centralWidget);
+        lineB->setObjectName(QStringLiteral("lineB"));
+        lineB->setGeometry(QRect(89, 40, 88, 22));
+        lineB->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
 "color: rgb(255, 0, 4);"));
-        lineEdit_3 = new QLineEdit(centralWidget);
-        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
-        lineEdit_3->setGeometry(QRect(89, 69, 88, 22));
-        lineEdit_3->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
+        lineC = new QLineEdit(centralWidget);
+        lineC->setObjectName(QStringLiteral("lineC"));
+        lineC->setGeometry(QRect(89, 69, 88, 22));
+        lineC->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
 "color: rgb(255, 0, 4);"));
         label_4 = new QLabel(centralWidget);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setGeometry(QRect(11, 98, 16, 24));
         label_4->setStyleSheet(QLatin1String("color: rgb(255, 255, 255);\n"
 "font: 75 16pt \"Consolas\";"));
-        textEdit = new QTextEdit(centralWidget);
-        textEdit->setObjectName(QStringLiteral("textEdit"));
-        textEdit->setGeometry(QRect(36, 98, 141, 31));
-        textEdit->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
-"font: 75 14pt \"Consolas\";\n"
+        btnClear = new QPushButton(centralWidget);
+        btnClear->setObjectName(QStringLiteral("btnClear"));
+        btnClear->setGeometry(QRect(20, 150, 151, 31));
+        btnClear->setStyleSheet(QLatin1String("background-color: rgb(255, 0, 4);\n"
+"font: 75 12pt \"MS Shell Dlg 2\";\n"
+"color: rgb(255, 255, 255);"));
+        btnExit = new QPushButton(centralWidget);
+        btnExit->setObjectName(QStringLiteral("btnExit"));
+        btnExit->setGeometry(QRect(20, 190, 151, 31));
+        btnExit->setStyleSheet(QLatin1String("background-color: rgb(255, 0, 4);\n"
+"font: 75 12pt \"MS Shell Dlg 2\";\n"
+"color: rgb(255, 255, 255);"));
+        lineTotal = new QLineEdit(centralWidget);
+        lineTotal->setObjectName(QStringLiteral("lineTotal"));
+        lineTotal->setGeometry(QRect(30, 100, 151, 31));
+        lineTotal->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
 "color: rgb(255, 0, 4);"));
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(20, 150, 151, 31));
-        pushButton->setStyleSheet(QLatin1String("background-color: rgb(255, 0, 4);\n"
-"font: 75 12pt \"MS Shell Dlg 2\";\n"
-"color: rgb(255, 255, 255);"));
-        pushButton_2 = new QPushButton(centralWidget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(20, 190, 151, 31));
-        pushButton_2->setStyleSheet(QLatin1String("background-color: rgb(255, 0, 4);\n"
-"font: 75 12pt \"MS Shell Dlg 2\";\n"
-"color: rgb(255, 255, 255);"));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -136,8 +134,11 @@ public:
         label_2->setText(QApplication::translate("MainWindow", "Class B", Q_NULLPTR));
         label_3->setText(QApplication::translate("MainWindow", "Class C", Q_NULLPTR));
         label_4->setText(QApplication::translate("MainWindow", "$", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("MainWindow", "CLEAR", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("MainWindow", "EXIT", Q_NULLPTR));
+        btnClear->setText(QApplication::translate("MainWindow", "CLEAR", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        btnExit->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>Submit and exit.</p></body></html>", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+        btnExit->setText(QApplication::translate("MainWindow", "OK", Q_NULLPTR));
         menuStadium_Seating->setTitle(QApplication::translate("MainWindow", "Stadium Seating", Q_NULLPTR));
     } // retranslateUi
 

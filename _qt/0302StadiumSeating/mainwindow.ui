@@ -69,7 +69,7 @@ font: 75 14pt &quot;Consolas&quot;;</string>
      <string>Class C</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="lineA">
     <property name="geometry">
      <rect>
       <x>89</x>
@@ -83,7 +83,7 @@ font: 75 14pt &quot;Consolas&quot;;</string>
 color: rgb(255, 0, 4);</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_2">
+   <widget class="QLineEdit" name="lineB">
     <property name="geometry">
      <rect>
       <x>89</x>
@@ -97,7 +97,7 @@ color: rgb(255, 0, 4);</string>
 color: rgb(255, 0, 4);</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_3">
+   <widget class="QLineEdit" name="lineC">
     <property name="geometry">
      <rect>
       <x>89</x>
@@ -128,22 +128,7 @@ font: 75 16pt &quot;Consolas&quot;;</string>
      <string>$</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit">
-    <property name="geometry">
-     <rect>
-      <x>36</x>
-      <y>98</y>
-      <width>141</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-font: 75 14pt &quot;Consolas&quot;;
-color: rgb(255, 0, 4);</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="btnClear">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -161,7 +146,7 @@ color: rgb(255, 255, 255);</string>
      <string>CLEAR</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="btnExit">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -170,13 +155,30 @@ color: rgb(255, 255, 255);</string>
       <height>31</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Submit and exit.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 0, 4);
 font: 75 12pt &quot;MS Shell Dlg 2&quot;;
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>EXIT</string>
+     <string>OK</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineTotal">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>100</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(255, 0, 4);</string>
     </property>
    </widget>
   </widget>
