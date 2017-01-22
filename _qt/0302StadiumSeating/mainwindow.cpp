@@ -28,6 +28,7 @@ void MainWindow::on_lineA_returnPressed()
     int tixA = ui->lineA->text().toInt();
     MainWindow::setTicketsA(tixA);
     ui->lineTotal->setText(QString::number(getIncomeTotal()));
+    this->focusNextChild();
 }
 
 void MainWindow::on_lineB_returnPressed()
@@ -35,6 +36,7 @@ void MainWindow::on_lineB_returnPressed()
     int tixB = ui->lineB->text().toInt();
     MainWindow::setTicketsB(tixB);
     ui->lineTotal->setText(QString::number(getIncomeTotal()));
+    this->focusNextChild();
 }
 
 void MainWindow::on_lineC_returnPressed()
@@ -42,6 +44,7 @@ void MainWindow::on_lineC_returnPressed()
     int tixC = ui->lineC->text().toInt();
     MainWindow::setTicketsC(tixC);
     ui->lineTotal->setText(QString::number(getIncomeTotal()));
+    this->focusNextChild();
 }
 
 
@@ -51,4 +54,5 @@ void MainWindow::on_btnClear_clicked()
     ui->lineB->clear();
     ui->lineC->clear();
     MainWindow::setIncomeTotal(0.0);
+    ui->lineTotal->setText(QString::number(getIncomeTotal()));
 }

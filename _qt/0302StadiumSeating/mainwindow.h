@@ -46,7 +46,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    int ticketsA, ticketsB, ticketsC;
+    int ticketsA = 0, ticketsB = 0, ticketsC = 0;
     double incomeTotal = 0.0;
 };
 
