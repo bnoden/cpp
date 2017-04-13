@@ -852,6 +852,6 @@ Binary Trees
 
 	Deleting a node - pr20-4 or p1166
 
-	Templates - pr20-5 or p1175
+	Templates - BinaryTree.h or pr20-5 or p1175
 		must support the <, >, and == operators 
-		
+
