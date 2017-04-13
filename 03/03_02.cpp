@@ -13,7 +13,7 @@ using namespace std;
 
 int costA = 15, costB = 12, costC = 9;
 
-void main() {
+int main() {
 	int ticketsA, ticketsB, ticketsC;
 	double incomeA, incomeB, incomeC, incomeTotal;
 
@@ -28,5 +28,7 @@ void main() {
 	incomeC = ticketsC * costC;
 	incomeTotal = incomeA + incomeB + incomeC;
 	cout << setprecision(2) << fixed << "Total revenue: $" << incomeTotal << endl;
-	return;
+
+	
+	return 0;
 }

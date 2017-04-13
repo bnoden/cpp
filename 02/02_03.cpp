@@ -15,10 +15,10 @@ double price = 95.0;
 double taxTotal = price * (STATE_TAX + COUNTY_TAX);
 double priceTotal = price + taxTotal;
 
-void main() {
+int main() {
 	cout << setprecision(2) << fixed << "Price: $" << price << endl;
 	cout << setprecision(2) << fixed << "Tax: $" << taxTotal << endl;
 	cout << setprecision(2) << fixed << "Total: $" << priceTotal << endl;
 
-	return;
+	return 0;
 }

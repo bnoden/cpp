@@ -25,7 +25,7 @@ using namespace std;
 string name, city, college, profession, animal, pet;
 int age;
 
-void main() {
+int main() {
 	cout << "Name: ";
 	cin >> name;
 	cout << "Age: ";
@@ -47,5 +47,5 @@ void main() {
 	cout << " adopted a(an) " << animal << " named " << pet << ". They\nboth lived happily ever after!\n" << endl;
 	cin.get();
 	
-	return;
+	return 0;
 }

@@ -13,7 +13,7 @@ using namespace std;
 double loan, insurance, gas, oil, tires, maintenance;
 double costPerMonth, costPerYear;
 
-void main() {
+int main() {
 	cout << "Enter your monthly costs." << endl;
 	cout << "Loan payments: $";
 	cin >> loan;
@@ -35,5 +35,5 @@ void main() {
 	cout << "\nMonthly expenses: $" << setw(7) << right << costPerMonth << endl;
 	cout << "Yearly expenses:  $" << setw(6) << right << costPerYear << endl;
 
-	return;
+	return 0;
 }

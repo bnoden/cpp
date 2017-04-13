@@ -11,10 +11,10 @@ using namespace std;
 
 double MarkUp(double);
 
-void main() {
+int main() {
 	cout << setprecision(2) << fixed << "Circuit Board\n" << "Wholesale $" << 14.95 << "\nRetail $" << MarkUp(14.95) << endl;
 
-	return;
+	return 0;
 }
 
 double MarkUp(double price) {

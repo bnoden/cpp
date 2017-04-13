@@ -33,7 +33,7 @@ int year;
 
 int w = 20, w2 = 8;
 
-void main() {
+int main() {
 	cout << "Enter the month: ";
 	cin >> month;
 	cout << "Enter the year: ";
@@ -52,5 +52,5 @@ void main() {
 	cout << setw(w) << left << "State Sales Tax:" << right << "$ " << setw(w2) << revenue*STATE_TAX << endl;
 	cout << setw(w) << left << "Total Sales Tax:" << right << "$ " << setw(w2) << revenue*totalTax << endl;
 
-	return;
+	return 0;
 }

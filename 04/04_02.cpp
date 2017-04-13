@@ -10,7 +10,7 @@ Write a program that asks the user to enter a number within the range of 1 throu
 #include <string>
 using namespace std;
 
-void main() {
+int main() {
 	int num = 0;
 	string romanNum;
 
@@ -36,5 +36,5 @@ void main() {
 	cout << "\nThe Roman Numeral for " << num << " is " << romanNum << "." << endl;
 	cout << "\nGoodbye." << endl;
 
-	return; 
+	return 0; 
 }

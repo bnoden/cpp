@@ -19,7 +19,7 @@ using namespace std;
 
 double minute = 60, hour = 3600, day = 86400;
 
-void main() {
+int main() {
 	int seconds;
 	double intVal = 1;
 	string strVal = " seconds";
@@ -34,5 +34,5 @@ void main() {
 	cout << setprecision(2) << fixed;
 	cout << "There are " << seconds/intVal << strVal << " in " << seconds << " seconds." << endl;
 
-	return;
+	return 0;
 }

@@ -15,11 +15,11 @@ on the screen.
 #include <iostream>
 using namespace std;
 
-void main() {
+int main() {
 	int a = 28, b = 32, c = 37, d = 24, e = 33;
 	int sum = a+b+c+d+e;
 	
 	cout << sum/5 << endl;
 
-	return; 
+	return 0; 
 }

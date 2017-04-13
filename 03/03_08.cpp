@@ -16,7 +16,7 @@ float palletWeight, totalWeight;
 
 int numberOfWidgets;
 
-void main() {
+int main() {
 	cout << "Pallet weight (lbs): ";
 	cin >> palletWeight;
 	cout << "Total weight (lbs): ";
@@ -25,5 +25,5 @@ void main() {
 
 	cout << "There are " << numberOfWidgets << " widgets." << endl;
 
-	return;
+	return 0;
 }

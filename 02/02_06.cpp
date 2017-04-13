@@ -18,11 +18,11 @@ the  annualPayvariable. Display the total annual pay on the screen.
 #include <iostream>
 using namespace std;
 
-void main() {
+int main() {
 	double payAmount = 2200.0, payPeriods = 26;
 	double annualPay = payAmount*payPeriods;
 
 	cout << "Total pay: $" << annualPay << endl;
 
-	return; 
+	return 0; 
 }

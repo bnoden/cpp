@@ -8,7 +8,7 @@ conditional operator to determine which number is the smaller and which is the l
 #include <iomanip>
 using namespace std;
 
-void main() {
+int main() {
 	int num1, num2, min, max;
 	cout << "Enter an integer: ";
 	cin >> num1;
@@ -20,5 +20,5 @@ void main() {
 
 	cout << "\nThe smaller number is " << min << " and the larger number is " << max << "." << endl;
 
-	return;
+	return 0;
 }

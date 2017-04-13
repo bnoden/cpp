@@ -18,7 +18,7 @@ int num1, num2, solution, answer, correct, incorrect;;
 
 void CheckAnswer(int, int);
 
-void main() {
+int main() {
 	
 	int problems = 1;
 
@@ -60,7 +60,7 @@ void main() {
 		cout << "You should study more!" << endl;
 	}
 
-	return;
+	return 0;
 }
 
 void CheckAnswer(int sol, int ans) {

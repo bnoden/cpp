@@ -14,7 +14,7 @@ using namespace std;
 
 float male, female, total;
 
-void main() {
+int main() {
 	cout << "Enter number of male students: ";
 	cin >> male;
 	cout << "Enter number of female students: ";
@@ -25,5 +25,5 @@ void main() {
 	cout << "The class is " << (male/total)*100 << "% male and ";
 	cout << (female/total)*100 << "% female." << endl;
 
-	return;
+	return 0;
 }

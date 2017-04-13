@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void main() {
+int main() {
 	int fifty = 50;
 	int oneHundred = 100;
 	int total = fifty + oneHundred;
@@ -10,5 +10,5 @@ void main() {
 	cout << oneHundred << endl;
 	cout << total << endl;
 
-	return;
+	return 0;
 }

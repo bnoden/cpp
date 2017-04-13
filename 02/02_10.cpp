@@ -13,12 +13,12 @@ using namespace std;
 
 int milesDriven, gallonsUsed, milesPerGallon;
 
-void main() {
+int main() {
 	gallonsUsed = 15;
 	milesDriven = 375;
 	milesPerGallon = milesDriven / gallonsUsed;
 
 	cout << "MPG: " << milesPerGallon << endl;
 
-	return;
+	return 0;
 }

@@ -10,7 +10,7 @@ amount, and total bill on the screen.
 #include <iomanip>
 using namespace std;
 
-void main() {
+int main() {
 	double mealCost = 88.67;
 	double tax = 0.0675*mealCost;
 	double tip = 0.2*(mealCost+tax);
@@ -22,5 +22,5 @@ void main() {
 	cout << "Total: $" << mealCost+tax+tip << endl;
 	cout << endl;
 
-	return; 
+	return 0; 
 }

@@ -10,7 +10,7 @@ per gallon of gas.
 #include <iomanip>
 using namespace std;
 
-void main() {
+int main() {
 	int gallons = 0, miles = 0;
 
 	while (gallons < 1) {
@@ -28,5 +28,5 @@ void main() {
 	cout << "\nGoodbye." << endl;
 
 
-	return; 
+	return 0; 
 }

@@ -35,7 +35,7 @@ using namespace std;
 double getTime(double, char);
 void timef(double);
 
-void main() { 
+int main() { 
 	const double MIN_DISTANCE = 0.0;
 	const double MAX_DISTANCE = 6000.0;
 	int distance = -1;
@@ -59,7 +59,7 @@ void main() {
 	timef(travelTime);
 	cout << endl;
 
-	return; 
+	return 0; 
 }
 
 double getTime(double dist, char dir) {

@@ -12,7 +12,7 @@ using namespace std;
 double percentOfSales = 0.58;
 double sales = 8600000;
 
-void main() {
+int main() {
 	cout << setprecision(2) << fixed << "East Coast sales: $" << sales*percentOfSales << endl;
-	return;
+	return 0;
 }

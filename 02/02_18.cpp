@@ -18,11 +18,11 @@ int customers = 16500;
 int eDrinkers = customers * 0.15;
 int cDrinkers = eDrinkers * 0.58;
 
-void main() {
+int main() {
 	cout << "Number of customers surveyed: " << customers << endl;
 	cout << "Purchase one or more energy drink per week: " << eDrinkers << endl;
 	cout << "Prefer citrus-flavored energy drinks: " << cDrinkers << endl;
 	cout << "(Numbers are approximate.)" << endl;
 
-	return;
+	return 0;
 }

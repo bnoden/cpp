@@ -11,7 +11,7 @@ using namespace std;
 
 double r1Length, r1Width, r2Length, r2Width, r1Area, r2Area;
 
-void main() {
+int main() {
 	cout << "Length of first rectangle: ";
 	cin >> r1Length;
 	cout << "Width of first rectangle: ";
@@ -37,5 +37,5 @@ void main() {
 		cout << "Rectangle 2 is greater." << endl;
 	}
 
-	return;
+	return 0;
 }
