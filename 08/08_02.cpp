@@ -14,7 +14,7 @@ numbers:
 #include <string>
 using namespace std;
 
-void main() { 
+int main() { 
 	int luckyNumbers[] = {13579, 26791, 26792, 33445, 55555, 62483, 77777, 79422, 85647, 93121};
 	int winningNumber;
 	bool won = false;
@@ -29,5 +29,5 @@ void main() {
 	if (won) { cout << "\nYou won!\n" << endl; }
 	else if (!won) { cout << "\nYou did not win...\n" << endl; }
 
-	return; 
+	return 0; 
 }

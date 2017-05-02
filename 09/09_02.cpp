@@ -17,7 +17,7 @@ int *getScores(int);
 void sortAsc(int [], int);
 int scoreAverage(int [], int);
 
-void main() {
+int main() {
 	int numberOfScores = -1;
 	int *scores;
 
@@ -38,7 +38,7 @@ void main() {
 
 	delete [] scores;
 
-	return; 
+	return 0; 
 }
 
 int scoreAverage(int arr[], int size) {

@@ -17,7 +17,7 @@ using namespace std;
 
 int doSomething(int*, int*);
 
-void main() {
+int main() {
 	int *x;
 	int *y;
 	int z = 5;
@@ -31,7 +31,7 @@ void main() {
 	cout << "Something was done " << something << " times." << endl;
 	cout << "\nGoodbye.\n" << endl;
 
-	return; 
+	return 0; 
 }
 
 int doSomething(int *x,int *y) {

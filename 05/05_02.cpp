@@ -7,7 +7,7 @@ through 127. Display 16 characters on each line.
 #include <iostream>
 using namespace std;
 
-void main() {
+int main() {
 	int count = 16;
 
 	for (int i = 0; i < 127; i++) {
@@ -21,5 +21,5 @@ void main() {
 
 	cout << endl;
 
-	return; 
+	return 0; 
 }

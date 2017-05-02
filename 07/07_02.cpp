@@ -13,7 +13,7 @@ Input Validation: Do not accept negative numbers for monthly rainfall figures.
 #include <string>
 using namespace std;
 
-void main() {
+int main() {
 	const int MONTHS = 12;
 
 	string monthArr[MONTHS] = {"January","February","March","April","May","June","July",
@@ -50,6 +50,6 @@ void main() {
 	cout << "\nGoodbye." << endl;
 
 
-	return; 
+	return 0; 
 }
 

@@ -19,7 +19,7 @@ using namespace std;
 
 double calculateRetail(double, double);
 
-void main() {
+int main() {
 	double costWholesale = -0.01, markup = -0.01;
 
 	while (costWholesale < 0.0) {
@@ -36,7 +36,7 @@ void main() {
 	cout << "\nThe retail cost for this item is $" << calculateRetail(costWholesale, markup) << endl;
 	cout << endl;
 
-	return;
+	return 0;
 }
 
 double calculateRetail(double cost, double markup) {

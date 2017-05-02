@@ -7,7 +7,7 @@ then display the largest and smallest values stored in the array.
 #include <iostream>
 using namespace std;
 
-void main() {
+int main() {
 	const int SIZE = 10;
 	int numbers[SIZE];
 	int min, max;
@@ -35,5 +35,5 @@ void main() {
 	cout << "The smallest numbers is " << min << endl;
 	cout << "\nHave a nice day. Goodbye." << endl;
 
-	return;
+	return 0;
 }

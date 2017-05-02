@@ -19,7 +19,7 @@ amount of deposits, the total amount of withdrawals, and the total interest earn
 #include <iomanip>
 using namespace std;
 
-void main() {
+int main() {
 	double interestYearly = 0.0, initialBalance = 0.0, currentBalance = 0.0;
 	double interestMonthly, amountDeposited, amountWithdrawn = 0.0;
 	double interestEarned = 0.0, depositTotal = 0.0, withdrawalTotal = 0.0;
@@ -60,5 +60,5 @@ void main() {
 	cout << "Total interest earned: $" << interestEarned << endl;
 	cout << endl;
 	
-	return;
+	return 0;
 }

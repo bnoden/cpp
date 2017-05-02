@@ -12,7 +12,7 @@ void sortAsc(int [], int);
 int scoreAverage(int [], int);
 int dropLowest(int [], int);
 
-void main() {
+int main() {
 	int numberOfScores = -1;
 	int *scores;
 
@@ -43,7 +43,7 @@ void main() {
 	cout << endl;
 	delete [] scores;
 
-	return; 
+	return 0; 
 }
 
 int dropLowest(int arr[], int size) {

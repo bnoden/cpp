@@ -13,7 +13,7 @@ using namespace std;
 
 int *allocate(int);
 
-void main() {
+int main() {
 	int numInput = -1;
 	int *numbers;
 
@@ -41,7 +41,7 @@ void main() {
 		}
 	}
 
-	return; 
+	return 0; 
 }
 
 int *allocate(int num) {

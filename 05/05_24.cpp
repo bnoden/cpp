@@ -17,7 +17,7 @@ numbers, and the average of the numbers.
 #include <fstream>
 using namespace std;
 
-void main() {
+int main() {
 	ifstream inFile;
 	inFile.open("D:\\000\\0cpp\\05\\Random.txt");	// Couldn't find random.txt, renamed ListOfNumbers.txt instead
 	int number = 0, sum = 0, count = 0;
@@ -35,5 +35,5 @@ void main() {
 
 	inFile.close();
 
-	return;
+	return 0;
 }

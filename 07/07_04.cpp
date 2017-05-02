@@ -11,7 +11,7 @@ using namespace std;
 void LargerThan(int[], int, int);
 
 // TEST
-void main() {
+int main() {
 	const int SIZE = 10;
 	int num[SIZE];
 	int number;
@@ -32,7 +32,7 @@ void main() {
 
 	cout << endl;
 
-	return;
+	return 0;
 }
 
 void LargerThan(int arr[],int size,int n) {

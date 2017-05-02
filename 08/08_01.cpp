@@ -16,7 +16,7 @@ display a message indicating that the number is invalid.
 #include <string>
 using namespace std;
 
-void main() {
+int main() {
   bool isValid = false;
   string valid;
   int input = 0;
@@ -41,5 +41,5 @@ void main() {
 
   cout << "The number you entered is " << valid << "." << endl;
 
-  return;
+  return 0;
 }

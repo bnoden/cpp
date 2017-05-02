@@ -14,7 +14,7 @@ bool binSearch(int[], int, int);
 
 bool isValid = false;
 
-void main() {
+int main() {
 	
 	string valid;
 	int count = 0, input = 0;
@@ -39,7 +39,7 @@ void main() {
 
 	cout << "The number you entered is " << valid << "." << endl;
 
-	return;
+	return 0;
 }
 
 bool binSearch(int arr[],int size,int val) {

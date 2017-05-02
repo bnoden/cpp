@@ -10,7 +10,7 @@ so that it writes the final report to a file.
 #include <fstream>
 using namespace std;
 
-void main() {
+int main() {
 	double interestYearly = 0.0, initialBalance = 0.0, currentBalance = 0.0;
 	double interestMonthly, amountDeposited, amountWithdrawn = 0.0;
 	double interestEarned = 0.0, depositTotal = 0.0, withdrawalTotal = 0.0;
@@ -59,5 +59,5 @@ void main() {
 
 	balanceFile.close();
 
-	return;
+	return 0;
 }

@@ -36,7 +36,7 @@ int getColumnTotal(int[SIZE][SIZE], int);
 int getHighestInRow(int[SIZE][SIZE], int);
 int getLowestInRow(int[SIZE][SIZE], int);
 
-void main() {
+int main() {
 	int numbers[SIZE][SIZE];
 	int arrNum = 0, rowNum = -1, colNum = -1;
 
@@ -70,7 +70,7 @@ void main() {
 	cout << "The total for the elements in COLUMN ";
 	cout << colNum << " is " << getColumnTotal(numbers, colNum) << endl;
 
-	return;
+	return 0;
 }
 
 int getLowestInRow(int arr[SIZE][SIZE],int num) {

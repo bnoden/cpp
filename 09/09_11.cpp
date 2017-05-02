@@ -12,7 +12,7 @@ using namespace std;
 
 int* expand(int[], int);
 
-void main() {
+int main() {
 	int array1[] = {111111,22222,3333,444,55,6};
 	int count = 0;
 
@@ -33,7 +33,7 @@ void main() {
 	delete [] array2;
 	cout << endl;
 
-	return; 
+	return 0; 
 }
 
 int* expand(int arr[], int size) {

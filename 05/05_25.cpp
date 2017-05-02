@@ -16,7 +16,7 @@ www.pearsonhighered.com/gaddis.)
 #include <fstream>
 using namespace std;
 
-void main() {
+int main() {
 	string name;
 	ifstream nameFile;
 
@@ -28,5 +28,5 @@ void main() {
 
 	nameFile.close();
 
-	return;
+	return 0;
 }

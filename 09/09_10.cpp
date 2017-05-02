@@ -13,7 +13,7 @@ using namespace std;
 
 int *reverse(int[],int);
 
-void main() {
+int main() {
 	int array1[] = {0,10,101,1010,10101,1010101,10101010};
 	int count = 0;
 	for (int index : array1) {
@@ -31,7 +31,7 @@ void main() {
 	delete [] array2;
 	cout << endl;
 
-	return; 
+	return 0; 
 }
 
 int *reverse(int arr[],int size) {

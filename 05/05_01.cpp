@@ -10,7 +10,7 @@ Input Validation: Do not accept a negative starting number.
 #include <iomanip>
 using namespace std;
 
-void main() {
+int main() {
 	int intVal = -1, sum = 0;
 	
 	while (intVal < 1) {
@@ -24,5 +24,5 @@ void main() {
 
 	cout << "\nThe sum of the numbers from 1 to " << intVal << " is " << sum << endl;
 	cout << endl;
-	return;
+	return 0;
 }

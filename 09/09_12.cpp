@@ -13,7 +13,7 @@ using namespace std;
 
 int* expandByOne(int[], int);
 
-void main() {
+int main() {
 	int array1[] = {1,2,3,4,5,6};
 	int count = 0;
 
@@ -34,7 +34,7 @@ void main() {
 	cout << endl;
 	delete [] array2;
 
-	return; 
+	return 0; 
 }
 
 int* expandByOne(int arr[],int size) {
